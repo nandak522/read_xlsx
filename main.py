@@ -28,4 +28,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         print("Usage: python3 main.py <xlsx_absolute_path> <sheet_name>")
         exit(1)
-    main(sys.argv[1], argv[2])
+    main(sys.argv[1], sys.argv[2])
