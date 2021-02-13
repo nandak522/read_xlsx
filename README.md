@@ -5,6 +5,6 @@
 3. Run
     ```sh
     virtualenv --python=python3 .
-    $PWD/bin/pip3 install -r requirements.txt
-    $PWD/bin/python3 main.py
+    ./bin/pip3 install -r requirements.txt
+    ./bin/python3 main.py <xlsx_absolute_path> <sheet_name>
     ```

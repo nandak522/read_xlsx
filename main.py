@@ -1,10 +1,11 @@
 import pandas
 import os
+import sys
 
-def main():
+def main(xlsx_absolute_path, sheet_name):
     excel_data_df = pandas.read_excel(
-        os.path.join(os.getcwd(), 'src/Test.xlsx'),
-        sheet_name='OpsHi5!&DEI',
+        xlsx_absolute_path,
+        sheet_name=sheet_name,
         usecols=[
             'Category ',
             'S.No ',
@@ -24,4 +25,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) != 3:
+        print("Usage: python3 main.py <xlsx_absolute_path> <sheet_name>")
+        exit(1)
+    main(sys.argv[1], argv[2])
