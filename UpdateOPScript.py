@@ -202,6 +202,14 @@ for index, row in sheetDataFrame.iterrows():
             # set it to Partial
             driver.find_element_by_xpath("//select[@name='" +dropdownId+ "']/option[text()='Partial']").click()
 
+    targetDateId = "grdView_ServiceDelivery_ctl{0:0=2d}_txtTargetDate".format(i)
+    from datetime import datetime
+    from dateutil import relativedelta
+    now = datetime.now()
+    future_date_from_now = now + relativedelta.relativedelta(months=1)
+    future_date_with_15th_day = datetime(year=future_date_from_now.year, month=future_date_from_now.month, day=15)
+    driver.find_element_by_id(targetDateId).sendKeys(future_date_with_15th_day.strftime("%d %b %Y"))
+
 
 def service_delivery_handler():
 
