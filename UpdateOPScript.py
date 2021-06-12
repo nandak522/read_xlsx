@@ -187,8 +187,8 @@ for index, row in sheetDataFrame.iterrows():
 
     # We are setting the dropdwn to Green/Partial on every iteration (which means on every row in the table.)
     # prevsymbol => will never be empty or "-"
-    assert len(prevsymbol) != 0, "prevsymbol can't be empty"
-    assert (len(prevsymbol) == 1 and prevsymbol[0] == "-"), "prevsymbol can't be empty"
+    assert len(prevsymbol) != 0, "'List of audit evidence/Remarks' can't be empty"
+    assert (len(prevsymbol) == 1 and prevsymbol[0] == "-"), "'List of audit evidence/Remarks' can't be empty"
 
     dropdownId = "grdView_ServiceDelivery_ctl{0:0=2d}_ddl_AuditorStatus".format(i)
     if not prevsymbol1:
