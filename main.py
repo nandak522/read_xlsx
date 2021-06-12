@@ -8,7 +8,7 @@ def main(xlsx_absolute_path, sheet_name):
         sheet_name=sheet_name,
         usecols=[
             'Category ',
-            'S.No ',
+            'Sr. No. ',
             'Parameters ',
             'Category ',
             'Filter ',
@@ -17,11 +17,16 @@ def main(xlsx_absolute_path, sheet_name):
             'Observation on deviation ',
             'Recommendation ']
     )
+    print(type(excel_data_df))
+    # for item in excel_data_df[['List of audit evidence/Remarks ']]:
+    #     print(dir(item))
 
     # To get the column header names
-    # print(excel_data_df.columns.ravel())
+    print("These are the column header names:%s" % excel_data_df.columns.ravel())
+    for index, row in excel_data_df.iterrows():
+        print(row['List of audit evidence/Remarks '], row['Observation on deviation '], row['Recommendation '])
 
-    print(excel_data_df[['List of audit evidence/Remarks\xa0', 'Observation on deviation\xa0', 'Recommendation\xa0']])
+    # print(excel_data_df[['List of audit evidence/Remarks\xa0', 'Observation on deviation\xa0', 'Recommendation\xa0']])
 
 
 if __name__ == '__main__':
