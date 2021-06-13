@@ -142,7 +142,7 @@ for index, row in sheetDataFrame.iterrows():
     now = datetime.now()
     future_date_from_now = now + relativedelta.relativedelta(months=1)
     future_date_with_15th_day = datetime(year=future_date_from_now.year, month=future_date_from_now.month, day=15)
-    driver.find_element_by_id(targetDateId).sendKeys(future_date_with_15th_day.strftime("%d %b %Y"))
+    driver.find_element_by_id(targetDateId).send_keys(future_date_with_15th_day.strftime("%d %b %Y"))
 
     i +=1
     sleep(10)
